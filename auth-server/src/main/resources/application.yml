@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8888
+#thymeleaf start
+spring.thymeleaf.mode: LEGACYHTML5
+spring.thymeleaf.prefix: classpath:/templates/
+spring.thymeleaf.suffix: .html
+spring.thymeleaf.template-resolver-order: 0
+spring.thymeleaf.cache: false
+#thymeleaf end
+---
+spring:
+  profiles: dev
+  application:
+    name: auth-center
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
